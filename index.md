@@ -1,46 +1,52 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: «Learn you some Erlang» на русском
+tagline: Теперь банановый!
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+Это вольный перевод замечтаельных уроков [Learn you some Erlang](http://learnyousomeerlang.com/) на русский язык. Помимо этого, сайт содержит некоторое количество информации и ссылок на ресурсы полезные для разработки веб-приложений на Erlang. Я не ставлю целью сделать полный и дословный перевод `learnyousomeerlang`, в том же самом порядке и идентичным содержанием, скорее — базировать свои размышления, и дополнять перевод своими наблюдениями и открытиями (а возможно и скринкастами). Все это ни сколько не уменьшает заслуг автора оригинального `learnyousomeerlang`, потому, что у него вышел на самом деле удачный учебник. Часть картинок также заимствована из LYSE.
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+В качестве хостинга исползуется [GitHub](https://github.com/vshvedov/learnyousomeerlang) (за такую возможность им отдельное спасибо, хотя оно скорее всего не будет услышано), а это значит, что вместо того, что бы жаловаться на опечатки и ошибки, вы можете просто форкнуть репозиторий, все поправить и после этого сделать пул-реквест (я буду очень благодарен и за новые за статьи на тему веб-разработки на Эрланг). Помимо этого используется [Jekyll](https://github.com/mojombo/jekyll) со всем-давно-надоевшим [Twitter Bootstrap](http://twitter.github.com/bootstrap/). Ок.
 
-## Update Author Attributes
+## Почему Erlang
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+Итак, почему же Erlang? Начнем с примера:
+{% highlight erl %}
+1> One.
+* 1: variable 'One' is unbound
+2> One = 1.
+1
+3> Un = Uno = One = 1.
+1
+4> Two = One + One.
+2
+5> Two = 2.
+2
+6> Two = Two + 1.
+** exception error: no match of right hand side value 3
+7> two = 2.
+** exception error: no match of right hand side value 2
+{% endhighlight %}
+Хм… Такой поворот событий переворачивает с ног на голову все что мы делали до сих пор в C, Ruby или Python. Поэтому первый ответ на вопрос «Почему?» — простое любопытство.
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+Эрланг — язык [функциональный](http://ru.wikipedia.org/wiki/%D0%AF%D0%B7%D1%8B%D0%BA_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F), и об этом мы поговорим позже. Хорошая новость — Эрланг отличное начало для изучени функциональных языков программирования, поскольку он является языком общего испльзования, с динамической типизацией, автоматическим сбором мусора и отлично подходит для разработки веб-приложений, которые могут работать годами без перезагрузки.
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+И еще один довод — Эрланг действительно быстро и легко учить. Опытный программист начинает понимаь что он делает уже черз пару дней работы с Эрлангом. По-началу синтаксис, возможно, будет казаться странным, некоторые парадигмы функциональных языков как минимум непонятными — но это очень быстро проходит. Эрланг не академическия язык, а разработан работающими программистами для работающих программистов.
 
-    $ rm -rf _posts/core-samples
+О всех остальных достоинствах вы сможете узнать непосредственно за чтением этого сайта.
 
-Here's a sample "posts list".
+## Учи Эрланг во имя добра!
 
+    *…Вы заходите в темный коридор. Таинственнй фиолетовый свет освещает древние камни стен. По мере того, как вы приближаетесь к его источнику, вы физически ощущаете как волны Силы и энергии начинают прохадить сквозь ваше тело. Вы поворачиваете за угол и видите…*
+
+### Введение
 <ul class="posts">
   {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+    <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
 
-## To-Do
+## И еще…
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
+За обновлениями лучше всего следить на [Google+ Эрланг](https://plus.google.com/b/104910556132565049710/).
