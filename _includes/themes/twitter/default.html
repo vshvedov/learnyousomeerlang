@@ -26,7 +26,6 @@
   </head>
 
   <body>
-
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
@@ -41,16 +40,16 @@
     </div>
 
     <div class="container">
-
       <div class="content">
         {{ content }}
       </div>
-
+      <div class="content">
+        {% include JB/hypercomments %}
+      </div>
       <footer>
         <p>&copy;  <a href="http://geekdb.org" target="_blank" title="geekdb.org">Vlad Shvedov</a> 2012</p>
       </footer>
-
-    </div> <!-- /container -->
+    </div>
 
     {% include JB/analytics %}
   </body>
